@@ -8,3 +8,18 @@ export function separateWords(text) {
     });
     return separatedWords
 }
+export function countWords(separatedWords){
+    const words = new Map()
+    separatedWords.forEach(word => {
+        words.has(word) ? words.set(word,(words.get(word)) + 1) : words.set(word, 1)
+    });
+    return words
+}
+
+export function showResults(words){
+    let result = ''
+    words.forEach((value, key) => {
+        result += `word "${key}" comes across ${value} times\n`
+    })
+    return result
+}
