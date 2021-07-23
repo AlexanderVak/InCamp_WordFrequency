@@ -1,16 +1,20 @@
-import { text ,separate } from "./index";
+import { text , separateWords } from "./index";
 describe('Word frequency', () => {
     const expectedText = [
-        'Little', 'red',
-        'fox', 'likes',
-        'red', 'box.',
-        'Red', 'box',
-        'is', 'big!'
-    ]
+            'little', 'red',
+            'fox', 'likes',
+            'red', 'box',
+            'red', 'box',
+            'is', 'big'
+        ]
     it('should split by spaces', () => {
-        expect(separate(text)).toStrictEqual(expectedText)
+        expect(separateWords(text)).toStrictEqual(expectedText)
     });
-    
-    
+    it('should split without special signs', () => {
+        expect(separateWords(text)).toStrictEqual(expectedText)
+    });
+    it('should convert words to lowercase', () => {
+        expect(separateWords(text)).toStrictEqual(expectedText)
+    });
 });
 
